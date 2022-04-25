@@ -22,3 +22,4 @@
 22. Minimum Number of Arrows to Burst Balloons
 23. maximum length of pair chain 
 24. Split Array into Consecutive Subsequences
+25. Path with maximum gold
