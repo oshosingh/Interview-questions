@@ -1,0 +1,9 @@
+1. Reverse linked list and k groups, 
+   detect lopop, remove loop,merge list, rotate list
+2. Merge intervals, insert intervals
+3. Min Cost Path forward dp - geeksforgeeks
+4. Do all gfg dp problems
+5. Permutation
+6. Sliding window
+7. Greedy,sorting problems
+8. Leetcode easy and medium problems

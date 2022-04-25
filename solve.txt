@@ -1,0 +1,24 @@
+1. Happy Number
+2. Group Anagrams leetcode (49)
+3. Diameter of Binary tree
+4. Container with most water.
+5. Trapping rain water
+6. Next Permutation
+7. 3sum closest
+8. search in rotated array
+9. Find First and Last Position of Element in Sorted Array
+10. Vertical traversal of binary tree
+11. Largest number
+12. Combination sum 2
+13. Rotate Image
+14. Insert interval
+15. Subsets
+16. Increasing Triplet Subsequence
+17. Remove k digits
+18. Non-overlapping intervals
+19. Shortest Unsorted Continuous Subarray
+20. Recognize string
+21. Contains duplicate 3
+22. Minimum Number of Arrows to Burst Balloons
+23. maximum length of pair chain 
+24. Split Array into Consecutive Subsequences
