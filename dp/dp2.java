@@ -60,3 +60,38 @@ int palSubstring(String s, int n){
 
     return maxLen;
 }
+
+
+// Form a palindrome
+/**
+    Given a string, find the minimum number of characters to be inserted to convert it to palindrome.
+    For Example:
+    ab: Number of insertions required is 1. bab or aba
+    aa: Number of insertions required is 0. aa
+    abcd: Number of insertions required is 3. dcbabcd
+
+    Logic - > Use Longest Common Subsequence
+ */
+
+ int insert(String s, int n){
+    StringBuilder sb = new StringBuilder(s);
+    String t = sb.reverse().toString();
+
+    int[][] dp = new int[n+1][n+1];
+
+    for(int i=0; i<n+1; i++){
+        for(int j=0; j<n+1; j++){
+            if(i==0 || j==0){
+                dp[i][j] = 0;
+            }
+            else if(s.charAt(i)==t.charAt(j)){
+                dp[i][j] = 1 + dp[i-1][j-1];
+            }
+            else{
+                dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+            }
+        }
+    }
+
+    return n-dp[n][n];
+ }
