@@ -111,7 +111,8 @@ public ListNode reverseBetween(ListNode head, int l, int r) {
 
         return head;
     }
-    
+
+// swap in pairs of two
 ListNode swapPairs(ListNode head) {
         if(head == null){
             return head;
