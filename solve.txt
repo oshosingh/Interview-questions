@@ -24,3 +24,4 @@
 24. Split Array into Consecutive Subsequences
 25. Path with maximum gold
 26. Remove Duplicate letters
+27. Sort colors
