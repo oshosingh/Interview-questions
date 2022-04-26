@@ -91,3 +91,31 @@ void diameter(Tree root){
 }
 return max;
 
+// Validate Binary Search Tree
+public boolean isValidBST(TreeNode root) {
+        if(root == null){
+            return true;
+        }
+        
+        if(root.left == null && root.right == null){
+            return true;
+        }
+        
+        return solve(root, Long.MIN_VALUE, Long.MAX_VALUE);
+}
+    
+boolean solve(TreeNode root, long min, long max){
+        if(root == null){
+            return true;
+        }
+        
+        if((long)root.val > min && (long)root.val < max){
+            boolean x = solve(root.left, min, root.val);
+            boolean y = solve(root.right, root.val, max);
+            
+            return x&&y;
+        }
+        else{
+            return false;
+        }
+}
