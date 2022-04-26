@@ -29,3 +29,47 @@ int[] solve(int[] a, int l, int r, int target, int[] ans){
         
         return new int[]{-1,-1};
 }
+
+
+// Path sum 2
+/***
+    Given the root of a binary tree and an integer targetSum, 
+    return all root-to-leaf paths where the sum of the node values
+     in the path equals targetSum. Each path should be returned as a list
+      of the node values, not node references.
+
+    A root-to-leaf path is a path starting from the root and ending at any leaf node.
+    A leaf is a node with no children
+ */
+
+List<List<Integer>> paths = new ArrayList<>();
+    
+public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+        
+        if(root == null)
+            return paths;
+        
+        dfs(root, targetSum, new ArrayList<>());
+        
+        return paths;
+}
+    
+void dfs(TreeNode node, int targetSum, ArrayList<Integer> path) {
+        
+        // 1- Check specific case
+        if(node == null)
+            return;
+        
+        // 2- Prosses a cell
+            path.add(node.val);
+            targetSum -= node.val;
+        
+        // target sum == 0 and check if node is leaf
+        if(targetSum == 0 && node.left == null && node.right == null)
+            paths.add(path);
+        
+        
+        // 3- Call dfs as many times as nedded
+        dfs(node.left, targetSum, new ArrayList<>(path));
+        dfs(node.right, targetSum, new ArrayList<>(path));
+}
