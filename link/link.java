@@ -132,3 +132,33 @@ ListNode swapPairs(ListNode head) {
         
         return temp;
 }
+
+// remove nth node from end of list
+public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode cur = head;
+        int count = 0;
+        
+        while(cur != null){
+            count++;
+            cur = cur.next;
+        }
+        
+        int x = count-n+1;
+        if(x==1){
+            return head.next;
+        }
+        
+        ListNode prev = null;
+        cur = head;
+        int u = 0;
+        while(cur != null){
+            u++;
+            if(u==x){
+                prev.next = cur.next;
+            }
+            prev = cur;
+            cur = cur.next;
+        }
+        
+        return head;
+}
