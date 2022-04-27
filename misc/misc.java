@@ -94,3 +94,55 @@ int findUnsortedSubarray(int[] nums) {
         
         return end-start>0? end-start+1 : 0;
 }
+
+// Longest Substring Without Repeating Characters
+/**
+    Given a string s, find the length of the longest substring without repeating characters.
+*/
+
+int lengthOfLongestSubstring(String s) {
+        int ans = Integer.MIN_VALUE;
+        int start = 0;
+        int end = 0;
+        int n = s.length();
+        
+        if(s.equals("")){
+            return 0;
+        }
+        
+        if(s.equals(" ")){
+            return 1;
+        }
+        
+        if(s.length()==1){
+            return 1;
+        }
+        
+        Set<Character> set = new HashSet<>();
+        boolean flag = true;
+        
+        while(end<n){
+            flag = true;
+            if(set.contains(s.charAt(end))){
+                ans = Math.max(ans, end-start);
+                
+                while(s.charAt(start) != s.charAt(end)){
+                    set.remove(s.charAt(start));
+                    start++;
+                    flag = false;
+                }
+                
+                start++;
+            }
+            else{
+                set.add(s.charAt(end));
+            }
+            end++;
+        }
+        
+        if(flag){
+            ans = Math.max(ans, end-start);
+        }
+        
+        return ans == Integer.MIN_VALUE ? 0 : ans;
+}
