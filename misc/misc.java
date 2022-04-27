@@ -146,3 +146,26 @@ int lengthOfLongestSubstring(String s) {
         
         return ans == Integer.MIN_VALUE ? 0 : ans;
 }
+
+
+// Find Peak element
+/**
+    A peak element is an element that is strictly greater than its neighbors.
+    Given an integer array nums, find a peak element, and return its index. 
+    If the array contains multiple peaks, return the index to any of the peaks.
+    You may imagine that nums[-1] = nums[n] = -∞.
+    You must write an algorithm that runs in O(log n) time.
+ */
+
+
+int findPeakElement(int[] nums) {
+        int l = 0, r = nums.length - 1;
+        while (l < r) {
+            int mid = (l + r) / 2;
+            if (nums[mid] > nums[mid + 1])
+                r = mid;
+            else
+                l = mid + 1;
+        }
+        return l;
+}
