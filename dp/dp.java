@@ -54,7 +54,7 @@ int knapsack(int w, int[] wt, int[] val, int n){
                 subset[i][j] = subset[i][j - 1];
                 if (i >= set[j - 1])
                     subset[i][j] = subset[i][j]
-                                   || subset[i - set[j - 1]][j - 1];
+                                   || subset[i - arr[j - 1]][j - 1];
             }
         }
         return dp[sum][n];
