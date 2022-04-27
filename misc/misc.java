@@ -73,3 +73,24 @@ void dfs(TreeNode node, int targetSum, ArrayList<Integer> path) {
         dfs(node.left, targetSum, new ArrayList<>(path));
         dfs(node.right, targetSum, new ArrayList<>(path));
 }
+
+// Shortest Unsorted Continuous Subarray
+/**Given an integer array nums, you need to find one continuous subarray that
+ if you only sort this subarray in ascending order, then the whole array will
+  be sorted in ascending order.
+ Return the shortest such subarray and output its length. 
+*/
+int findUnsortedSubarray(int[] nums) {
+        int start = nums.length; int end = 0;
+        int[] snums = nums.clone();
+        Arrays.sort(snums);
+        
+        for(int i=0; i<nums.length; i++){
+            if(snums[i] != nums[i]){
+                start = Math.min(start, i);
+                end = Math.max(end, i);
+            }
+        }
+        
+        return end-start>0? end-start+1 : 0;
+}
