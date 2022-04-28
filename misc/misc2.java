@@ -30,3 +30,32 @@ int maxProduct(int[] nums) {
         
         return res;
 }
+
+
+// Integer to Roman
+String intToRoman(int num) {
+        if(num == 0){
+            return "";
+        }
+        
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "I"); map.put(5, "V"); map.put(10, "X");
+        map.put(50, "L"); map.put(100, "C"); map.put(500, "D");
+        map.put(1000, "M");
+        
+        //exceptions
+        map.put(4, "IV"); map.put(9, "IX"); map.put(40, "XL"); map.put(90, "XC");
+        map.put(400, "CD"); map.put(900, "CM");
+        
+        TreeSet<Integer> set = new TreeSet<>();
+        for(Integer key : map.keySet()){
+            set.add(key);
+        }
+        
+        int val = set.floor(num);
+        
+        String ans = "";
+        ans = map.get(val) + intToRoman(num-val);
+        return ans;
+    }
+}
