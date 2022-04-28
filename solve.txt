@@ -25,3 +25,4 @@
 25. Path with maximum gold
 26. Remove Duplicate letters
 27. Sort colors
+28. Longest Consecutive Sequence
