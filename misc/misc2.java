@@ -60,3 +60,26 @@ String intToRoman(int num) {
         return ans;
     }
 }
+
+// Pow(x, n)
+// Implement pow(x, n), which calculates x raised to the power n (i.e., xn).
+double myPow(double base, int p) {
+        long power = p;
+
+        if (power < 0) {
+            base = 1 / base;
+            power = -power;
+        }
+
+        double res = 1d;
+        while (power > 0) {
+            if ((power % 2) != 0) {
+                power -= 1;
+                res *= base;
+            } else {
+                power /= 2;
+                base *= base;
+            }
+        }
+        return res;
+ }
