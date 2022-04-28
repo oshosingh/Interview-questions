@@ -83,3 +83,29 @@ double myPow(double base, int p) {
         }
         return res;
  }
+
+ // Contiguous array
+ // Given a binary array nums, return the maximum length of a contiguous subarray with an equal number of 0 and 1.
+
+ int findMaxLength(int[] nums) {
+        int ans = 0;
+        int sum = 0;
+        
+        Map<Integer, Integer> map = new HashMap<>();
+        
+        for(int i=0; i<nums.length; i++){
+            sum += nums[i] == 1 ? 1: -1;
+            if(sum == 0){
+                ans = Math.max(ans, i+1);
+            }
+            else{
+                if(map.containsKey(sum)){
+                    ans = Math.max(ans, i-map.get(sum));
+                }
+                else{
+                    map.put(sum, i);
+                }
+            }
+        }        
+        return ans;
+}
