@@ -111,6 +111,48 @@ double myPow(double base, int p) {
 }
 
 
+// Longest Palindrome
+/**
+    You are given an unordered array of unique integers incrementing from. 
+    You can swap any two elements a limited number of times. 
+    Determine the largest lexicographical value array that can be created by
+     executing no more than the limited number of swaps.
+
+     5 1         n = 5, k = 1
+     4 2 3 5 1   arr = [4, 2, 3, 5, 1]
+
+     output - > 5 2 3 4 1
+ */
+List<Integer> largestPermutation(int k, List<Integer> arr) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        // Store val and index in map
+        for(int i=0; i<arr.size(); i++){
+            map.put(arr.get(i), i);
+        }
+        
+        List<Integer> temp = new ArrayList<>(arr);
+        Collections.sort(temp, (a,b) -> b-a);
+        
+        int i = 0; 
+        while(i<arr.size() && k>0){
+            if(temp.get(i)>arr.get(i)){
+
+                // place max at the beginning
+                int x = arr.get(i);
+                arr.set(i, temp.get(i));
+                arr.set(map.get(temp.get(i)), x);
+                
+                //update indexes map
+                map.put(x, map.get(temp.get(i)));
+                map.put(temp.get(i), i);
+                
+                k--;
+            }
+            i++;
+        }
+        return arr;
+}
 
 
 
