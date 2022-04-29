@@ -17,7 +17,7 @@ class LRUCache {
         // remove key
         map.remove(key);
         
-        //add again making it new or recently used
+        //add again making it new or recently used, insert in last (latest)
         map.put(key, value);
         return value;
     }
