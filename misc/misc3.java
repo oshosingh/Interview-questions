@@ -33,3 +33,21 @@ class LRUCache {
         }
     }
 }
+
+// Rotate Array
+void rotate(int[] a, int k) {
+        k = k%a.length;
+        reverse(a, 0, a.length-1);
+        reverse(a, 0, k-1);
+        reverse(a, k, a.length-1);
+}
+    
+void reverse(int[] a, int s, int e){
+    while(s<e){
+        int temp = a[s];
+        a[s] = a[e];
+        a[e] = temp;
+        s++;
+        e--;
+    }
+}
