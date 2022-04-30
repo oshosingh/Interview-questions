@@ -30,3 +30,40 @@ TreeNode solve(List<Integer> in, List<Integer> post){
 
         return root;
 }
+
+// Construct Binary Search Tree from Preorder Traversal
+int idx;
+public TreeNode bstFromPreorder(int[] preorder) {
+        idx = 0;
+        if(preorder.length == 0){
+            return null;
+        }  
+        return solve(preorder, Integer.MIN_VALUE, Integer.MAX_VALUE);
+}
+    
+TreeNode solve(int[] preorder, int min, int max){
+        if(idx == preorder.length || preorder[idx]<min || preorder[idx]> max){
+            return null;
+        }
+        
+        int val = preorder[idx++];
+        TreeNode node = new TreeNode(val);
+        node.left = solve(preorder, min, val);
+        node.right = solve(preorder, val, max);
+        return node;   
+}
+
+// Convert sorted array to BST
+TreeNode solve(int[] nums, int low, int high){
+        if(low<0 || high>nums.length-1){
+            return null;
+        }
+        if(low>high){
+            return null;
+        }
+        int mid = (low+high)/2;
+        TreeNode node = new TreeNode(nums[mid]);
+        node.left = solve(nums, low, mid-1);
+        node.right = solve(nums, mid+1, high);
+        return node;
+}
