@@ -84,6 +84,22 @@ double myPow(double base, int p) {
         return res;
  }
 
+ // Pow(x,y) handle overflow using mod
+ int pow(int x, int y, int p){
+     int res = 1;
+     while(y>0){
+         if(y%2=1){
+             y -= 1;
+             res = (res*x) % p;
+         }
+         else{
+             y /= 2;
+             x = (x*x)%p;
+         }
+     }
+     return res;
+ }
+
  // Contiguous array
  // Given a binary array nums, return the maximum length of a contiguous subarray with an equal number of 0 and 1.
 
