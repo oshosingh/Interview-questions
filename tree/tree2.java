@@ -67,3 +67,20 @@ TreeNode solve(int[] nums, int low, int high){
         node.right = solve(nums, mid+1, high);
         return node;
 }
+
+//Kth-smallest in BST
+int count = 0;
+int ans = 0; //is the answer
+void solve(TreeNode root, int k){
+        if(root == null){
+            return;
+        }
+        solve(root.left, k);
+        count++;
+        if(count==k){
+            ans = root.val;
+            return;
+        }
+        solve(root.right, k);
+    }
+}
