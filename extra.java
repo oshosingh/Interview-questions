@@ -18,7 +18,7 @@ int solve(int a[], int n){
 
     int count = 0;
     for(int i=0; i<values.size(); i++){
-        if(values[i]<frequency){
+        if(values.get(i)<frequency){
             continue;
         }
         else{
