@@ -1,0 +1,13 @@
+---
+- Stack:
+  - Balance Parantheses
+  - To access immediate previous element based on condition
+  - Recursion
+
+- Queue:
+  - Breadth first traversal of Graph
+  - Level Order traversal of tree
+
+- Heap:
+  - kth smallest/largest in array/stream
+  - Consider for questions which says find max or min elements, K elements 
