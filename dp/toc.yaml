@@ -1,0 +1,16 @@
+--- 
+- problems:
+  - 0/1 Knapsack problem
+  - Subset sum
+  - Coin change
+  - Minimum coins to make V cents
+  - Longest Common subsequence
+  - Longest common substring
+  - Longest palindromic subsequence
+  - Longest Palindromic substring
+  - find min insetions to Form a palindrome
+  - Egg drop puzzle
+  - Maximum increasing subsequence
+  - Kadanes's algorithm, maximum sum subarray
+  - Cur rod
+  - Min Cost path in grid

@@ -1,0 +1,22 @@
+---
+- Traversal:
+  - Inorder 
+  - preorder 
+  - postorder 
+  - levelorder 
+  - vertical
+
+- Construction:
+  - BT from preorder and inorder
+  - BT from inorder and postorder
+  - BST from preorder
+  - BST from sorted array
+
+- Operations:
+  - height of tree 
+  - diameter 
+  - valid BST 
+  - Kth smallest in BST
+  - Maximum path sum 
+
+

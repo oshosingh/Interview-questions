@@ -1,0 +1,8 @@
+---
+- Operations:
+  - Reverse a linked list
+  - Reverse between l and r
+  - Rotate right by k places
+  - Reverse in groups of K
+  - Swap in pairs of two
+  - remove nth node from end of list

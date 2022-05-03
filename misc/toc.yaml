@@ -1,0 +1,11 @@
+---
+- problems:
+  - Find First and Last Position of Element in Sorted Array
+  - Leetcode Path sum 2
+  - Shortest unsorted continuous subarray 
+    (if you only sort this subarray in ascending order, then the whole array will
+     be sorted in ascending order.)
+
+  - Longest substring without repeating characters
+  - Find Peak element (element greater than its neighbors)
+  - Rotate array

@@ -169,3 +169,23 @@ int findPeakElement(int[] nums) {
         }
         return l;
 }
+
+// Rotete Array
+void rotateArray(int[] a){
+    if(a.length==0){
+        return;
+    }
+    reverse(a, 0, a.length-1);
+    reverse(a, 0, k-1);
+    reverse(a, k, a.length-1);
+}
+
+void reverse(int[] a, int low, int high){
+    while(low<high){
+        int temp = a[low];
+        a[low] = a[high];
+        a[high] = temp;
+        low++;
+        high--;
+    }
+}
