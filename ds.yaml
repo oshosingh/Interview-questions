@@ -3,11 +3,19 @@
   - Balance Parantheses
   - To access immediate previous element based on condition
   - Recursion
+  - Topological sorting
 
 - Queue:
   - Breadth first traversal of Graph
   - Level Order traversal of tree
+  - Questions based on FIFO 
+  - Double ended queue
 
 - Heap:
   - kth smallest/largest in array/stream
   - Consider for questions which says find max or min elements, K elements 
+
+- HashMap:
+  - Storing key,value pairs
+  - LinkedHashMap for LRU Cache (maintains order)
+  - TreeMap (sorted map) maintains order
