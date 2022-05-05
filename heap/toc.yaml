@@ -1,0 +1,7 @@
+---
+- problems:
+  - Kth smallest/largest in unsorted array
+  - Kth smallest/largest in stream
+  - Kth smallest/largest in stream of K sized window (priority queue of size k, remove prev and add new logic)
+  - Find Subsequence of Length K With the Largest Sum
+  - Largest Number After Digit Swaps by Parity
