@@ -6,3 +6,4 @@
   - Reverse in groups of K
   - Swap in pairs of two
   - remove nth node from end of list
+  - detect and remove loop
