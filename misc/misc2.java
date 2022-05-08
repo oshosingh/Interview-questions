@@ -127,7 +127,7 @@ double myPow(double base, int p) {
 }
 
 
-// Longest Palindrome
+// Largest permutation
 /**
     You are given an unordered array of unique integers incrementing from. 
     You can swap any two elements a limited number of times. 
