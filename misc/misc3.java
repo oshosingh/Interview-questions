@@ -65,3 +65,32 @@ void towerOfHanoi(int n, char from_rod,
                        from_rod +" to rod " + to_rod );
     towerOfHanoi(n - 1, aux_rod, to_rod, from_rod);
 }
+
+// Sieve of eratosthenes (Count primes)
+// Count prime below n
+int countPrimes(int n) {
+        
+    if(n<=1) return 0;
+
+    boolean[] primes = new boolean[n];
+    Arrays.fill(primes, true);
+
+    int ans = 0;
+    int y = 2;
+
+    while(y<n){
+        if(primes[y]){
+        mark(primes, y);
+        ans++;
+        }
+        y++;
+    }
+
+    return ans;
+}
+    
+void mark(boolean[] primes, int y){
+    for(int i=y*2; i<primes.length; i+=y){
+        primes[i] = false;
+    }
+}
