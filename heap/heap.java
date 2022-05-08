@@ -32,7 +32,7 @@ int[] maxSubsequence(int[] nums, int k) {
 
  int largestInteger(int num) {
 
-    // Max heap to store num's single digit integer
+    // Min heap to store num's single digit integer
     PriorityQueue<Integer> even = new PriorityQueue<>();
     PriorityQueue<Integer> odd = new PriorityQueue<>();
         

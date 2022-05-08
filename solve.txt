@@ -28,3 +28,4 @@
 28. Longest Consecutive Sequence
 29. Set Zeroes
 30. Valid triangle number
+31. Decode ways
