@@ -80,8 +80,8 @@ int countPrimes(int n) {
 
     while(y<n){
         if(primes[y]){
-        mark(primes, y);
-        ans++;
+            mark(primes, y);
+            ans++;
         }
         y++;
     }
