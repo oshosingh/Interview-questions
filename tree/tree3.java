@@ -16,3 +16,26 @@ void solve(Node root){
     ans = Math.max(ans, leftSum + root.val + rightSum);
     return root.val + Math.max(leftSum, rightSum);
 }
+
+// Subtree of another tree
+boolean isSubtree(TreeNode root, TreeNode subRoot) {
+        if(root==null || subRoot==null)
+            return root==null && subRoot==null;
+        
+        if(isSame(root, subRoot))
+            return true;
+        
+        return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
+    }
+    
+boolean isSame(TreeNode root, TreeNode subRoot){
+        if(root==null || subRoot==null)
+            return root==null && subRoot==null;
+        
+        else if(root.val == subRoot.val){
+            return isSame(root.left, subRoot.left) && isSame(root.right, subRoot.right);
+        }
+        
+        else
+            return false;
+}
