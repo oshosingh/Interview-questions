@@ -51,3 +51,16 @@ TreeNode invertTree(TreeNode root){
 
     return root;
 }
+
+// Lowest Common Ancestor
+TreeNode lcs(TreeNode root, TreeNode p, TreeNode q){
+    if(root==null) return null;
+    if(root.val == p.val || root.val == q.val) return root;
+
+    TreeNode left = lcs(root.left, p, q);
+    TreeNode right = lcs(root.right, p, q);
+
+    if(left==null) return right;
+    else if(right==null) return left;
+    return root;
+}
