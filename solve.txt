@@ -30,3 +30,4 @@
 30. Valid triangle number
 31. Decode ways
 32. Add two numbers
+33. Remove linked list elements
