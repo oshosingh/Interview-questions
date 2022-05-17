@@ -1,0 +1,53 @@
+- Java 1.8 Features:
+  - Lambda Expressions:
+    - lambda expressions help us to write code in functional style.
+      It provides a clear and concise way to implement SAM interface
+      (Single Abstract Method). E.g., Collections comparator
+
+      Syntax - (a,b) -> {}
+    
+    - Why Lambda:
+      - To provide the implementation of Functional interface
+      - Less Coding
+    
+  - Functional Interface:
+    - An interface that contains only one abstract method also known as SAM.
+    - It can have any number of static and default methods.
+    - '@FunctionalInterface to declare the interface'
+  
+  - Optional:
+    - It is a public final class which is used to deal with NullPointerException in Java application.
+    - import java.util
+
+  - forEach:
+    - Java provides a new method forEach() to iterate the elements. 
+      It is defined in Iterable and Stream interfaces.
+    
+  - Default Methods:
+    - Java provides a facility to create default methods inside the interface.
+    - code | 
+        interface Sayable{  
+          default void say(){  
+              System.out.println("Hello, this is default method");  
+          }   
+          void sayMore(String msg);  
+        }  
+  
+  - Stream Api:
+    - Java 8 java.util.stream package consists of classes, 
+      interfaces and an enum to allow functional-style operations
+      on the elements. It performs lazy computation. 
+      So, it executes only when it requires.
+  
+  - Java Base64 Encoding and Decoding:
+    - Java provides a class Base64 to deal with encryption and decryption. 
+      You need to import java.util.Base64 class in your source file to use 
+      its methods.
+
+
+    
+
+
+
+    
+
