@@ -62,6 +62,16 @@
       It creates the objects, configures and assembles their dependencies,
       manages their entire life cycle. The Container uses Dependency Injection(DI)
       to manage the components that make up the application.
+  
+  - JPA (Java Persistence API):
+    - The Java Persistence API (JPA) is a specification of Java. It is used to persist data between Java
+      object and relational database. JPA acts as a bridge between object-oriented domain models and relational
+      database systems. As JPA is just a specification, it doesn't perform any operation by itself.
+
+  - Hibernate:
+    - Hibernate's primary feature is mapping from Java classes to database tables, and mapping from Java data types
+      to SQL data types. Hibernate also provides data query and retrieval facilities. It generates SQL calls and relieves
+      the developer from the manual handling and object conversion of the result set.
     
   
 

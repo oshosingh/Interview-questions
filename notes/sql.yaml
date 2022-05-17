@@ -1,0 +1,106 @@
+- Sql and Database:
+  - SQL is a standard language for storing, manipulating and retrieving data in databases.
+  - Databases are structured to facilitate the storage, retrieval, modification, and deletion
+    of data in conjunction with various data-processing operations.
+  - SQL DBs are vertically scalable.
+  
+  - Acid properties:
+    - Atomicity: The entire transaction takes place at once or doesn't happen at all.
+    - Consistency: DB must be consistent before and after the transaction.
+    - Isolation: Multiple transaction occur independently without interference.
+    - Durability: The changes of a successfull transaction occurs even if system failure occurs.
+
+  - Why Sql over NoSql:
+    - Nosql doesn't support relations between data types.
+    - Sql databases are a better fit for heavy duty or complex transactions because it's more 
+      stable and ensure data integrity.
+    - When not working with a large volume of data or many data types.
+    - You need to ensure ACID compliance.
+    - When working with complex queries and reports.
+  
+  - Why NoSql over Sql:
+    - When it is difficult to predict how application will grow over time
+    - Scaling out is easy as nosql dbs are horizontally scalable.
+    - Changing a data model in SQL is clunky and require code changes.
+    - You are not concerned about data consistency and 100% data integrity is not you top goal.
+
+  - Sql Queries:
+
+    - Nested Queries: 
+      - Finding second highest salary
+        select max(salary) from emp where salary > (select max(salary) from emp); 
+
+      - Find Duplicate email, using output as table 
+        select email from (select email, count(email) as num from emp group by email) as data where num>1;
+      
+    - Joins:
+
+      - Inner Join (A intersection B):
+        - SELECT StudentCourse.COURSE_ID, Student.NAME, Student.AGE FROM Student
+          INNER JOIN StudentCourse
+          ON Student.ROLL_NO = StudentCourse.ROLL_NO; 
+      
+      - Left join (A-B):
+        - SELECT Student.NAME,StudentCourse.COURSE_ID 
+          FROM Student
+          LEFT JOIN StudentCourse 
+          ON StudentCourse.ROLL_NO = Student.ROLL_NO;
+        
+        - All rows from A and matching from B, if no match then null values
+      
+      - Right join (B-A):
+        - SELECT Student.NAME,StudentCourse.COURSE_ID 
+          FROM Student
+          RIGHT JOIN StudentCourse 
+          ON StudentCourse.ROLL_NO = Student.ROLL_NO;
+        
+        - All rows from B and matching from A, if no match then null values
+      
+      - Full Join (A union B):
+        - SELECT Student.NAME,StudentCourse.COURSE_ID 
+          FROM Student
+          FULL JOIN StudentCourse 
+          ON StudentCourse.ROLL_NO = Student.ROLL_NO;
+        
+        - All rows from A and B, if no match then null values
+    
+    - Relationships:
+      - OneToOne
+      - OneToMany
+      - ManyToOne
+      - ManyToMany
+    
+    - Index:
+      - An index is small, fast, and optimized for quick lookups.
+      
+      - When should indexes be created:
+        - A column contains a wide range of values
+        - A column does not contain a large number of null values 
+        - One or more columns are frequently used together in a where clause or a join cond.
+      
+      - Clustered Index:  
+        - A clustered index is an index which defines the physical order in which table records
+          are stored in a database. Since there can be only one way in which records are physically
+          stored in a database table, there can be only one clustered index per table. By default a
+          clustered index is created on a primary key column.
+      
+      - Non-Clustered Index:  
+        - A non-clustered index is also used to speed up search operations. Unlike a clustered index,
+          a non-clustered index doesn’t physically define the order in which records are inserted into
+          a table. In fact, a non-clustered index is stored in a separate location from the data table.
+          A non-clustered index is like a book index, which is located separately from the main contents of the book.
+          Since non-clustered indexes are located in a separate location, there can be multiple non-clustered indexes per table.
+
+      
+
+
+      
+
+
+
+
+      
+      
+
+      
+    
