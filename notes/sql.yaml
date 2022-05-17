@@ -72,6 +72,8 @@
     
     - Index:
       - An index is small, fast, and optimized for quick lookups.
+      - It is like table of contents of a book, it helps find the chapter quickly ( Index seek )
+        If it is not there in book, then we have to check every page. ( Index scan )
       
       - When should indexes be created:
         - A column contains a wide range of values
@@ -90,6 +92,8 @@
           a table. In fact, a non-clustered index is stored in a separate location from the data table.
           A non-clustered index is like a book index, which is located separately from the main contents of the book.
           Since non-clustered indexes are located in a separate location, there can be multiple non-clustered indexes per table.
+        - They contain the primary key value in their map, when it finds the value then sql does a index seek on the primary key
+          or clustered index to find the record.
 
       
 
