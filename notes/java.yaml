@@ -67,6 +67,8 @@
     - The Java Persistence API (JPA) is a specification of Java. It is used to persist data between Java
       object and relational database. JPA acts as a bridge between object-oriented domain models and relational
       database systems. As JPA is just a specification, it doesn't perform any operation by itself.
+    - If you map various model classes to the database, then JPA can a) generate an appropriate SQL query/update,
+      b) convert the resultsets to the model classes. JPA also includes caching, and abstracts transaction handling.
 
   - Hibernate Framework:
     - Hibernate's primary feature is mapping from Java classes to database tables, and mapping from Java data types
