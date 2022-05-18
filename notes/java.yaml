@@ -7,6 +7,17 @@
        - Binding of data and the code that manipulates it. private variable and get set methods. 
        - It protects the data from being accessed by outside.
     - Inheritance: A mechanism in which one java class inherits the property of other class.
+  
+  - Threads:
+    - implement Runnable interface or extend Thread class to create threads.
+    - Use runnable because you can extend other class. If you use Thread class then you cannot extends any class.
+    - Executor framework for creating thread pools. 
+    - Life cycle of thread:
+      - New: when new thread is created
+      - Active: When it invokes start method
+      - Runnable: thread which is ready to run is moved to runnable
+      - Running: When thread gets the cpu
+      - Blocked or waiting: when thread is inactive for a span of time
         
   - Lambda Expressions:
     - lambda expressions help us to write code in functional style.
