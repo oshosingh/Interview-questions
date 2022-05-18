@@ -17,6 +17,8 @@
     - When not working with a large volume of data or many data types.
     - You need to ensure ACID compliance.
     - When working with complex queries and reports.
+    - SQL follows ACID, so it is consistent. You will not get stale data when you do a write operation 
+      and immediately do a read operation. NoSql are eventually consistent so it could return stale data.
   
   - Why NoSql over Sql:
     - When it is difficult to predict how application will grow over time

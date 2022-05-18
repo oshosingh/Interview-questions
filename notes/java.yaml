@@ -1,4 +1,13 @@
-- Java 1.8 Features:
+- Java and Java 1.8 Features:
+
+  - Oops concepts:
+    - Abstraction: Hiding the implementation and showing only the essential details.
+    - Polymorphism: It means many form. Functions with same signature and different parameters.
+    - Encapsulation: 
+       - Binding of data and the code that manipulates it. private variable and get set methods. 
+       - It protects the data from being accessed by outside.
+    - Inheritance: A mechanism in which one java class inherits the property of other class.
+        
   - Lambda Expressions:
     - lambda expressions help us to write code in functional style.
       It provides a clear and concise way to implement SAM interface
@@ -62,6 +71,14 @@
       It creates the objects, configures and assembles their dependencies,
       manages their entire life cycle. The Container uses Dependency Injection(DI)
       to manage the components that make up the application.
+  
+  - Bean and Bean scopes:
+    - Beans are java singleton objects that a spring boot context managers.
+    - Scopes:
+      - Singleton (Default) : Only one instance of bean is creted.
+      - Prototype: Returns different instance every time
+
+    - Use: '@Bean @Scope("singleton / prototype")'
   
   - JPA (Java Persistence API):
     - The Java Persistence API (JPA) is a specification of Java. It is used to persist data between Java

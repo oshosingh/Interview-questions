@@ -53,6 +53,16 @@
 - What are the challenges faced while using microservices:
   - Microservices always rely on each other. Therefore, they need to communicate with each other.
   - You need skilled professionals to support distributed microservices.
+  - Costly in terms of network usage.
+  - Debugging is a little bit complex, because control changes across services.
+
+= Difference between monolith and microservice:
+  - Monoliths: 
+    - If all the functionalities of a project exists in a single codebase, then that application is known as monolithic application.
+  - Microservices:
+    - It is an architectural development style in which the application is made up of smaller services communicating with each other
+      directly using lightweight protocols like HTTP.
+  
 
 - What is restful:
   - Representational State transfer(Rest) web services is an architectural style that helps systems to communicate 
@@ -74,6 +84,12 @@
   - The structure could be {currentPageNumber, [{dataRecordsList}], nextPage}
   - nextPage can be a boolean or a number which can tell us if nextPage is available or how many more pages are available
     excluding the current and previous pages.
+
+- What is serializable interface:
+  - It is a marker interface.
+  - To serialize an object means to convert its state to a byte stream so that the byte stream can be reverted back into a
+    copy of the object. A Java object is serializable if its class or any of its superclasses implements either the 
+    java. io. Serializable interface or its subinterface, java.
 
 
 
