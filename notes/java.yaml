@@ -12,6 +12,10 @@
     - implement Runnable interface or extend Thread class to create threads.
     - Use runnable because you can extend other class. If you use Thread class then you cannot extends any class.
     - Executor framework for creating thread pools. 
+    - The callable interface was introduced in concurrency package, which is similar to the Runnable interface, 
+      but it can return any object, and is able to throw an Exception. The Java Callable interface uses Generics,
+      so it can return any type of Object.
+      
     - Life cycle of thread:
       - New: when new thread is created
       - Active: When it invokes start method
