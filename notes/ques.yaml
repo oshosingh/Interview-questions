@@ -67,6 +67,15 @@
     However, they can use any communication protocol.
   - Example of binary protocol is protobuf which is widely used for gRPC communication.
 
+- How pagination works:
+  - Pagination is used to show only the required data records instead of displaying or fetching all the data from db. 
+    The logic is to divide the complete data into pages of fixed size and query the db for fetching only fixed size 
+    record and dispaly them. It also makes db query very fast. 
+  - The structure could be {currentPageNumber, [{dataRecordsList}], nextPage}
+  - nextPage can be a boolean or a number which can tell us if nextPage is available or how many more pages are available
+    excluding the current and previous pages.
+
+
 
 
  
