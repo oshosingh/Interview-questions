@@ -1,0 +1,73 @@
+- Why java is not 100% object oriented:
+  - Because in java we have primitive datatypes such as boolean, int, float, double etc. 
+  - Java provides wrapper for primitives but we can use primitives in their base form also.
+
+- Why pointers are not used in java:
+  - Since JVM is responsible for implicit memory allocation, thus in order to avoid direct access to memory
+    by the user, pointers are discouraged in java.
+  
+- What is Jit Comiler in java:  
+  - The bytes codes generated after compilation goes to JRE where interpreter and Jit compiler converts it To
+    machine language. Since interpreter is slow, jit compiler optimizes the java code translation during runtime.
+
+- Why string is immutable in java:
+  - String Pool requires string to be immutable otherwise shared reference can be changed from anywhere.
+  - security because string is the most used datatype, it is used in file system, networking, db connection etc,
+    having immutable string allows you to be secure and safe because no one can change reference of string once it 
+    gets created.
+
+  - Note: Boolean is also immutable in Java
+
+- What is marker Interface: 
+  - A marker interface can be defined as the interface having no data member and functions. It is like a metadata for the 
+    compiler to inform it what it has to do with the class which implements it.
+    E.g., Serializable, cloneable
+  
+- Can you override a private or static method:
+  - we cannot override private or static
+  - private is not inherited.
+  - static is not inherited because of method hiding.
+
+- Does finally always execute:
+  - Yes except below cases 
+    System.exit(), system crash
+  
+- What methods does the object class have:
+  - clone(), toString(), equals(), hashCode(), finalize()
+
+- How can you make a class immutable:
+  - Make class final
+  - Make the data members private
+  - Don't provide setter methods
+  - return copy of fields during getter calls 
+  - initialize all the fields via a constructor performing a deep copy
+
+- What is singleton class and how can we make a class singleton:
+  - check code
+
+- Explain microservice architecture:
+  - Breaking a project into smaller problems and developing and deploying them independently and enabling
+    the communication between them to solve the big problem. You can use any tech stack for developing the 
+    smaller problems.
+  
+- What are the challenges faced while using microservices:
+  - Microservices always rely on each other. Therefore, they need to communicate with each other.
+  - You need skilled professionals to support distributed microservices.
+
+- What is restful:
+  - Representational State transfer(Rest) web services is an architectural style that helps systems to communicate 
+    over the internet. These web services make microservices easier to understand and implement. 
+  
+- What is meaning of OAuth:
+  - Open authorization is a protocol that allows you to access the client app on http after being authenticated by 
+    3rd party providers like Google, Facebook etc. 
+  
+- How independent micro-services communicate with each other:
+  - It depends upon the project needs. However, in most cases, developers use HTTP/REST with JSON or Binary protocol.
+    However, they can use any communication protocol.
+  - Example of binary protocol is protobuf which is widely used for gRPC communication.
+
+
+
+ 
+  
