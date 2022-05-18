@@ -67,6 +67,8 @@
     - The Java Persistence API (JPA) is a specification of Java. It is used to persist data between Java
       object and relational database. JPA acts as a bridge between object-oriented domain models and relational
       database systems. As JPA is just a specification, it doesn't perform any operation by itself.
+      Therefore, it needs implementation. Hence, for data persistence ORM tools like Hibernate implements JPA specifications.
+
     - If you map various model classes to the database, then JPA can a) generate an appropriate SQL query/update,
       b) convert the resultsets to the model classes. JPA also includes caching, and abstracts transaction handling.
 
@@ -74,8 +76,16 @@
     - Hibernate's primary feature is mapping from Java classes to database tables, and mapping from Java data types
       to SQL data types. Hibernate also provides data query and retrieval facilities. It generates SQL calls and relieves
       the developer from the manual handling and object conversion of the result set.
+
+    - The main feature of Hibernate is to map the Java classes to database tables. Following are some key features of Hibernate:
+      - Hibernate is an implementation of JPA guidelines.
+      - It helps in mapping Java data types to SQL data types.
+      - It is the contributor of JPA.
     
-  
+  - Difference between Hibarnate and JPA:
+    - JPA is just an specification. It gives common functionality and prototype to ORM tools. 
+    - Hibernate is an ORM tool that follow the common standards, by executing the same specification.
+    - We use JPA because if we switch ORM then function will work as it is working with hibernate.
 
     
 
