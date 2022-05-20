@@ -97,4 +97,14 @@
                           last level and the last level has all keys as left as possible 
   - Perfect Binary Tree: A Binary tree is a Perfect Binary Tree in which all the internal nodes have two children and all leaf 
                          nodes are at the same level.
-  - Balanced Binary Tree: A binary tree is balanced if the height of the tree is O(Log n) where n is the number of nodes.                    
+  - Balanced Binary Tree: A binary tree is balanced if the height of the tree is O(Log n) where n is the number of nodes.   
+
+- Difference between Synchronized and concurrent collections:
+  - Though both Synchronized and Concurrent Collection classes provide thread-safety, 
+  - the differences between them come in performance,scalability, and how they achieve thread-safety.
+  - Synchronized collections like synchronized HashMap, Hashtable, HashSet, Vector, and synchronized ArrayList are much slower than
+    their concurrent counterparts like ConcurrentHashMap, CopyOnWriteArrayList, and CopyOnWriteHashSet. 
+  - The main reason for this slowness is locking; synchronized collections lock the whole collection e.g. whole Map or List
+  - while concurrent collection never locks the whole Map or List. They achieve thread safety by using advanced and sophisticated techniques like lock stripping. 
+  - For example, the ConcurrentHashMap divides the whole map into several segments and locks only the relevant segments, which allows multiple threads to access other
+    segments of the same ConcurrentHashMap without locking.          
