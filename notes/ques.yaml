@@ -56,11 +56,11 @@
   - Costly in terms of network usage.
   - Debugging is a little bit complex, because control changes across services.
 
-= Difference between monolith and microservice:
+- Difference between monolith and microservice:
   - Monoliths: 
-    - If all the functionalities of a project exists in a single codebase, then that application is known as monolithic application.
+    - If all the functionalities of a project exists in a single codebase, then that application is known as monolithic application
   - Microservices:
-    - It is an architectural development style in which the application is made up of smaller services communicating with each other
+    - It is an architectural development style in which the application is made up of smaller services communicating with each other 
       directly using lightweight protocols like HTTP.
   
 
@@ -91,8 +91,10 @@
     copy of the object. A Java object is serializable if its class or any of its superclasses implements either the 
     java. io. Serializable interface or its subinterface, java.
 
-
-
-
- 
-  
+- Types of trees in data structures:
+  - Full Binary Tree: A Binary Tree is a full binary tree if every node has 0 or 2 children
+  - Complete Binary Tree: Binary Tree is a Complete Binary Tree if all the levels are completely filled except possibly the 
+                          last level and the last level has all keys as left as possible 
+  - Perfect Binary Tree: A Binary tree is a Perfect Binary Tree in which all the internal nodes have two children and all leaf 
+                         nodes are at the same level.
+  - Balanced Binary Tree: A binary tree is balanced if the height of the tree is O(Log n) where n is the number of nodes.                    
