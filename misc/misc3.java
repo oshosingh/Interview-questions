@@ -94,3 +94,44 @@ void mark(boolean[] primes, int y){
         primes[i] = false;
     }
 }
+
+// Search in rotated subarray
+public boolean search(int[] nums, int target) {
+        int pivot = pivot(nums, 0, nums.length-1);
+        if(nums[nums.length-1]>target){
+            return search(nums, pivot, nums.length-1, target);
+        }
+        return search(nums, 0, pivot-1, target);
+}
+
+/**
+The input contain many duplicates
+Binary search will not be able to find pivot
+Worst case complexity when duplicates will be O(n)
+if no duplicates by binary search can be done in O(nlogn)
+ */ 
+    
+boolean search(int[] nums, int low, int high, int target){
+        while(low<=high){
+            int mid = (low+high)/2;
+            if(nums[mid]==target){
+                return true;
+            }
+            else if(nums[mid]>target) high=mid-1;
+            else low = mid+1;
+        }
+        return false;
+}
+    
+int pivot(int[] nums, int low, int high){
+        while(low<high){
+            int mid = (low+high)/2;
+            if(nums[mid]>nums[high]){
+                low = mid+1;
+            }
+            else{
+                high = mid;
+            }
+        }
+        return low;
+}
