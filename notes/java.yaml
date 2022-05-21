@@ -116,6 +116,11 @@
     - Hibernate is an ORM tool that follow the common standards, by executing the same specification.
     - We use JPA because if we switch ORM then function will work as it is working with hibernate.
 
+  - MongoTemplate:
+    - The MongoTemplate class is the primary implementation of MongoOperations interface which specifies the basic set of MongoDB operations. 
+    - We can also use MongoRepository interface to perform MongoDB operations.
+    - The implementation class of MongoRepository uses MongoTemplate bean at run time.
+
     
 
 
