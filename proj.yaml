@@ -1,0 +1,7 @@
+- project:
+  - I have worked on spring boot for creating rest apis using jpa to persist data into databases.
+  - I have also worked on a feature which is very simiar to GitPod but in my project it is a jupyterpod.
+  - Worked on this feature in 2 parts:
+    - First, creating the k8s cluster on AWS cloud and then setting up Jupyterhub server on the cluster using Helm chart.
+    - In the second part, I have worked on creating apis to create, delete jupyterlab containers on user's demand
+      and also created apis so that user can manage their servers in a structured manner in form of projects.
