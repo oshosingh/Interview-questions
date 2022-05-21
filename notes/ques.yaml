@@ -21,6 +21,11 @@
 - What is an interface?:
   - In simple words, Interface is a blueprint of the class. It contains static constants and abstract methods.
 
+- Difference between static and default methods in interface: 
+  - Default method: can be overriden in implementing class, while static cannot.
+  - Static method: belongs only to Interface class, so you can only invoke static method on Interface class, 
+                  not on class implementing this Interface i.e, ClassName.staticInterfaceMethod() is not valid
+
 - What is marker Interface: 
   - A marker interface can be defined as the interface having no data member and functions. It is like a metadata for the 
     compiler to inform it what it has to do with the class which implements it.
