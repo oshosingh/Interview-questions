@@ -22,6 +22,7 @@ class Counter{
 
 class TestThread implements Runnable{
     private i;
+    @Override
     void run(){
         for(int i=0; i<5; i++){
             System.out.println(i);
@@ -59,5 +60,15 @@ class Another{
         t2.join();
 
         System.out.println(c.getI());
+    }
+}
+
+class MultiThread extends Thread {
+    public void run(){
+        System.out.println("running");
+    }
+    public static void main(String[] args){
+        MultiThread t = new MultiThread();
+        t.start();
     }
 }
