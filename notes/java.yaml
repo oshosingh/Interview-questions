@@ -120,6 +120,13 @@
     - The MongoTemplate class is the primary implementation of MongoOperations interface which specifies the basic set of MongoDB operations. 
     - We can also use MongoRepository interface to perform MongoDB operations.
     - The implementation class of MongoRepository uses MongoTemplate bean at run time.
+    
+  - Maven:
+    - Maven is a powerful project management tool that is based on POM (project object model). It is used for projects build, dependency and documentation. It simplifies the build process
+  
+  - Dependency Inject in Spring:
+    - Dependency Injection is a fundamental aspect of the Spring framework, through which the Spring container “injects” objects into other objects or “dependencies”. 
+    - Simply put, this allows for loose coupling of components and moves the responsibility of managing components onto the container.
 
     
 
