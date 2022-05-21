@@ -17,6 +17,9 @@
     gets created.
 
   - Note: Boolean is also immutable in Java
+  
+- What is an interface?:
+  - In simple words, Interface is a blueprint of the class. It contains static constants and abstract methods.
 
 - What is marker Interface: 
   - A marker interface can be defined as the interface having no data member and functions. It is like a metadata for the 
@@ -33,7 +36,14 @@
     System.exit(), system crash
   
 - What methods does the object class have:
-  - clone(), toString(), equals(), hashCode(), finalize()
+  a. clone(): this method is used to create a clone of the object
+  b. equals(): this method is used to check whether objects are equal.
+  c. hashCode(): this method returns the hash value of the object.
+  d. toString(): this method returns the String representation of the given object.
+  e. wait():  causes the current method to wait until another thread calls notify() or notifyAll() method.
+  f. notify(): wakes up the single thread waiting for this object's monitor.
+  g. notifyAll(): wakes up all the threads, waiting for this object's monitor.
+  h. finalize(): this method is invoked by garbage collector just before the object is garbage collected.
 
 - How can you make a class immutable:
   - Make class final
@@ -44,6 +54,123 @@
 
 - What is singleton class and how can we make a class singleton:
   - check code
+
+- What is the difference between Checked and Unchecked Exception in Java?:
+  - Checked exception: Any exception that is checked by the compiler during compile time is called as Checked Exception.
+                       E.g., IOException and FileNotFoundException etc.
+  - Unchecked exception: Unchecked exceptions are the classes which inherit RuntimeException and Error. They are not checked
+                         by the compiler at compile time instead they are checked at runtime. E.g., NullPointerException, ArithmeticException etc.
+
+- What is the difference between throw and throws in Java?:
+  - throw: throw is a statement and used in a method to explicitly throw an exception.
+  - throws: throws keyword is used by a method to specify which exceptions can be thrown from the method. Class send to caller class if exception occurs.
+
+- What is the try with resources statement in Java?:
+  - try-with-resources is a try statement that declares one or more resources. A resource is an object that must be closed after the program is finished with it.
+    It ensures that each resource is closed at the end of the statement.
+
+- Difference betwee array and arraylist:
+  - Array:  
+    - Size is fixed
+    - Supports primitives like int,float,double
+    - can be multi-dimensional
+  - Arraylist: 
+    - Supports resize, size increase by 50% after full 
+    - Supports only object or wrappers of primitives 
+    - Always single dimensional 
+
+- Difference between linkedlist and arraylist/array?:
+  - LinkedList:   
+    - Elements are not stored contiguously
+    - Extra memory is required for storing next reference/node 
+    - insertion, removal is faster than arraylist because only references are changed 
+    - Doesn't support random access, should be used in cases where insertion/deletion are more frequent 
+  - ArrayList/Array:
+    - Elements are stored contiguously
+    - random access is allowed
+    - insetion, removal is costly because elements has to be shifted 
+    - Used in cases where random access/ element search prevails over insertion/deletion 
+
+- How hashmap works internally in java:
+  - Hashmap works on the principle of hashing
+  - HashMap get(Key k) method calls hashCode method on the key object and applies returned hashValue to its own static hash function to find
+    a bucket location(backing array) where keys and values are stored in form of a nested class called Entry (Map.Entry) .
+  - Whenever we call get( Key k )  method on the HashMap object . First it checks that whether key is null or not .  
+  - Note that there can only be one null key in HashMap .  
+
+- Difference between fail-safe and fail-fast iterators:
+  - It has to do with concurrent access of the elements. 
+  - 
+  - What is concurrent modification:
+    - When one or more thread is iterating over the collection, in between, one thread changes the structure of the collection (either adding
+      the element to the collection or by deleting the element in the collection or by updating the value at particular position in the collection)
+      is known as Concurrent Modification
+
+  - Fail-fast iterator:
+    - Fail fast iterator while iterating through the collection , instantly throws Concurrent Modification Exception if there is structural modification
+      of the collection . Thus, in the face of concurrent modification, the iterator fails quickly and cleanly, rather than risking arbitrary, 
+      non-deterministic behavior at an undetermined time in the future.
+    - Example: HashMap,Vector,ArrayList,HashSet
+  
+  = Fail-safe iterator: 
+    - Fail Safe Iterator makes copy of the internal data structure (object array) and iterates over the copied data structure.Any structural modification
+      done to the iterator affects the copied data structure.  So , original data structure remains  structurally unchanged .Hence , 
+      no ConcurrentModificationException throws by the fail safe iterator.
+    - Concurrent collection / Synchronized collection (Collections.synchronizedList() etc)
+    - Example: CopyOnWriteArrayList(add, set, remove etc. create a copy and applies the changes), ConcurrentHashMap(Key values can't be null, same as HashTable)
+
+- Difference between HashMap and HashTable:
+  - HashMap:
+    - Allows one null key and many null values 
+    - It is not thread safe 
+    - Uses iterator to iterate over values 
+  - HashTable: 
+    - Doesn't allow null key and null values 
+    - It is thread safe 
+    - other than vector class, HashTable uses enum to iterate, can use iterator by getting keyset and then using iterator 
+
+  - What is the difference between wait and sleep methods in Java Threads:  
+    - wait:
+      - It belongs to utll package
+      - wait can only be called inside synchronized block or method 
+      - wait method release the lock 
+    - sleep:
+      - It belows to thread class and it is a static method 
+      - It can be called outside synchronized block 
+      - It doesn't release the lock for specified time or until interrupt 
+
+- Difference between string, string buffer and string builder:
+  - String:
+    - It is immutable
+    - It is thread safe because immutable
+    - String created with assignment/literal resides in constant string pool 
+  - String Buffer:
+    - It is mutable
+    - It is thread safe, because every method is synchronized
+    - Objects are stored in heap
+  - String builder:
+    - It is mutable
+    - It is not thread safe 
+    - Objects are stored in heap
+
+- What is the difference between final, finally, and finalize in Java?:
+  - Final keyword:
+    - It makes thing contant and immutable 
+    - Can be used with variable, method, class 
+  - Finally block:
+    - Finally block is used after the try/catch block as an optional block while performing exception handling.
+      In java, finally block is used to perform operations such as resource cleanup or free up the memory space. 
+      Using finally and performing the cleanup operation is considered as a good coding practice.
+  - Finalize:
+    - Before an object is destroyed, the finalize method gets called by the garbage collector 
+      when it determines that there are no other references of the object present in the java virtual machine (JVM). 
+    - The sole purpose of this method being called by the garbage collector, just before an object gets destructed 
+      is because the object may have to close an opened database connection, free up used resources in memory and so on.
+    - The finalize method will not be invoked by the JVM more than once for any given object.
+
+- What is volatile keyword in java:
+  - If a variable is marked as volatile then this variable is read from the main memory instead of cache memory.
+
 
 - Explain microservice architecture:
   - Breaking a project into smaller problems and developing and deploying them independently and enabling
