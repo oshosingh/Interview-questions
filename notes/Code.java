@@ -25,3 +25,13 @@ class Solution {
     Optional<Integer> max = li.stream().max(Comparator.comparing(ele));
   }
 }
+
+// ------------------------ Hibernate ---------------------
+class X {
+  @OneToOne(targetEntity=Y.class)
+  private Y y;
+
+  @ManyToOne(cascade = CascadeType.ALL)
+  private Address address;
+
+}
