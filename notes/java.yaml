@@ -171,6 +171,9 @@
   - Dependency Injection in Spring:
     - Dependency Injection is a fundamental aspect of the Spring framework, through which the Spring container “injects” objects into other objects or “dependencies”. 
     - Simply put, this allows for loose coupling of components and moves the responsibility of managing components onto the container.
+  
+  - Profiles:
+    - Profiles are used to provide a way to segregate the different parts of the application config and makes it available for various environments.
 
     
 
