@@ -1,4 +1,10 @@
 - Java and Java 1.8 Features:
+  - Core concepts:  
+    - JVM: It is a specification that provides a runtime environment where byte codes can be executed.
+    - JRE: It is used to provide runtime environment, it is a implementation of JVM. It has set of libraries + other files
+           that JVM uses at runtime.
+    - JDK: It is a development kit which is used to develop java program. It contains JRE+development tools. It contains 
+           interpreter, compiler(javac), archive(jar)
 
   - Oops concepts:
     - Abstraction: Hiding the implementation and showing only the essential details.
