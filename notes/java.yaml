@@ -100,6 +100,7 @@
       - This feature provides help while running spring boot applications.
       - when you want to debug your application, Spring actuator provides easy access to features such as identifying beans, CPU usage etc.
       - It provides a very easy way to access the production-ready REST points and fetch all kind of information from web.
+      - It exposes several rest endpoints like info, health, metrics, trace, env etc. 
   
   - Spring IOC:
     - Spring IoC Container is the core of Spring Framework. 
