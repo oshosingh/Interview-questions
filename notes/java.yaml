@@ -101,12 +101,13 @@
       - when you want to debug your application, Spring actuator provides easy access to features such as identifying beans, CPU usage etc.
       - It provides a very easy way to access the production-ready REST points and fetch all kind of information from web.
       - It exposes several rest endpoints like info, health, metrics, trace, env etc. 
+      - You can create custom endpoints by overriding Endpoint interface or by using @Endpoint annotation 
   
   - Spring IOC:
     - Spring IoC Container is the core of Spring Framework. 
       It creates the objects, configures and assembles their dependencies,
       manages their entire life cycle. The Container uses Dependency Injection(DI)
-      to manage the components that make up the application.
+      to manage the components that make up the application
   
   - Bean and Bean scopes:
     - Beans are java singleton objects that a spring boot context managers.
@@ -115,6 +116,25 @@
       - Prototype: Returns different instance every time
 
     - Use: '@Bean @Scope("singleton / prototype")'
+  
+  - Annotations:
+    - ResponseBody: Tells the controller that object returned is serialized to JSON.
+    - RequestMapping: Used to provide routing information and tells to spring that any HTTP request must be mapped to respective method. 
+    - Configuration:
+      - Configuration annotation indicates that a class declares one or more @Bean methods and may be processed by the Spring container 
+        to generate bean definitions and service requests for those beans at runtime.
+    - ComponentScan: ComponentScan tells Spring to scan and detect beans.
+    - EnableAutoConfiguration: 
+        - Used to enable auto-configuration and component scanning in your project. 
+        - Combination of @Configuration and @ComponentScan
+        - Simply put, the Spring Boot autoconfiguration represents a way to automatically configure a Spring application based on the 
+          dependencies that are present on the classpath. 
+    - SpringBootApplication:
+      - Used in the main class 
+      - Combination of @Configuration, @ComponentScan and @EnableAutoConfiguration
+    - Component: 
+      - Component is an annotation that allows Spring to automatically detect our custom beans. In other words, without having to write any explicit code,
+      - Spring will Scan our application for classes annotated with @Component. Instantiate them and inject any specified dependencies into them.
   
   - JPA (Java Persistence API):
     - The Java Persistence API (JPA) is a specification of Java. It is used to persist data between Java
