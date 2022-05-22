@@ -118,6 +118,10 @@
     - Use: '@Bean @Scope("singleton / prototype")'
   
   - Annotations:
+    - Definition:
+      - Spring Boot Annotations is a form of metadata that provides data about a program. In other words, annotations are used to provide supplemental
+        information about a program. It is not a part of the application that we develop. It does not have a direct effect on the operation of the code
+        they annotate. It does not change the action of the compiled program.
     - ResponseBody: Tells the controller that object returned is serialized to JSON.
     - RequestMapping: Used to provide routing information and tells to spring that any HTTP request must be mapped to respective method. 
     - Configuration:
