@@ -17,6 +17,15 @@
     gets created.
 
   - Note: Boolean is also immutable in Java
+
+- What is association in java?:
+  - A relationship that has no ownership over another. For e.g., Person can be associated with multiple banks, and bank 
+    can be related to various people, but no one can own the other. 
+  
+- What is aggregation in java?:
+  - Relationship described as "has-a" relationship. It contains reference to another class and is said to have ownership of 
+    that class. Employee class has fields and reference to Address and Address has its own fields. Then it is "has-a" relationship.
+    Like Person has a Address.
   
 - What is an interface?:
   - In simple words, Interface is a blueprint of the class. It contains static constants and abstract methods.
