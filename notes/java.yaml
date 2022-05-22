@@ -165,6 +165,17 @@
       - It helps in mapping Java data types to SQL data types.
       - It is the contributor of JPA.
     
+    - Why use Hibernate and not JDBC:
+      - It eliminates boiler plates code that comes with JDBC. 
+      - In JDBC one needs to write code to map object model to relational table. Hibernate implicitly does it.
+      - Hibernate supports caching for better performance.
+    
+    - Annotations used in Hibernate: 
+      - javax.persistence.Entity: speicy entity beans 
+      - Table: to define relational table name
+      - Column: to define column name 
+      - Id: to define primary key 
+    
   - Difference between Hibarnate and JPA:
     - JPA is just an specification. It gives common functionality and prototype to ORM tools. 
     - Hibernate is an ORM tool that follow the common standards, by executing the same specification.
