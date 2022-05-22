@@ -176,6 +176,8 @@
       - Column: to define column name 
       - Id: to define primary key 
     
+    - Mapping in Hibernate: One to One, Many to One, Many to Many 
+    
   - Difference between Hibarnate and JPA:
     - JPA is just an specification. It gives common functionality and prototype to ORM tools. 
     - Hibernate is an ORM tool that follow the common standards, by executing the same specification.
