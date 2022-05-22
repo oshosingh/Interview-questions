@@ -90,6 +90,16 @@
   - Automatically configure Spring and 3rd party libraries whenever possible
   - Provide production-ready features such as metrics, health checks, and externalized configuration
   - Absolutely no code generation and no requirement for XML configuration
+
+  - Features of spring boot:  
+    - Starter dependency: With the help of this feature, it aggregates common dependencies together and eventually improves productivity.
+    - Auto-configuration: It helps in loading the default configurations according to the project you are working on. In this way, you 
+                          can avoid any unnecessary WAR files. 
+
+    - Spring Actuator: 
+      - This feature provides help while running spring boot applications.
+      - when you want to debug your application, Spring actuator provides easy access to features such as identifying beans, CPU usage etc.
+      - It provides a very easy way to access the production-ready REST points and fetch all kind of information from web.
   
   - Spring IOC:
     - Spring IoC Container is the core of Spring Framework. 
