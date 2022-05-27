@@ -35,3 +35,31 @@ Node removeLoop(Node node){
         
     }
 }
+
+// Copy List with random pointer (SNow)
+public Node copyRandomList(Node head) {
+    Map<Node, Node> oldToNew = new HashMap<>();
+    oldToNew.put(null, null);
+        
+    Node curr = head;
+        
+    // Create copies map in first pass
+    while(curr != null){
+        Node copy = new Node(curr.val);
+        oldToNew.put(curr, copy);
+        curr = curr.next;
+    }
+        
+    curr = head;
+        
+    // second iteration to update the pointers
+    while(curr != null){
+        Node copy = oldToNew.get(curr);
+        copy.next = oldToNew.get(curr.next);
+        copy.random = oldToNew.get(curr.random);
+            
+        curr = curr.next;
+    }
+        
+    return oldToNew.get(head);    
+}
