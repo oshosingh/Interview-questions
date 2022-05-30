@@ -1,0 +1,76 @@
+- What is spring boot security:
+  - It is a framework that focuses on providin both authentication and authorization in Java applications. If we have 
+    spring boot security in our classpath then our rest services automatically ask for authentication to access them.
+  
+  - How it is useful:
+    - It is very customizable according to application requirement.
+    - It provides integration with other framework
+    - It is maintained by spring so it implicitly handles a lot of vulnerabilities
+  
+  - Core concepts of spring security:
+      
+    - Authentication:
+      - Process of knowing and identifying a user who wants to access the application
+ 
+      - Types of Authentication:
+        - Knowledge Based: username/password, db authentication not very secure
+        - Possession Based: OTP
+        - Multi Factor: Uses Both username/password and OTP
+      
+      - In Spring Security we represent authentication as a given interface Authentication. It represents the token for an
+        authentication request or for a user.
+        getCredentials(), getDetails(), getPrincipal(), isAuthenticated(), setAuthenticated(boolean isAuthenticated)
+    
+    - Authorization:
+       - Process to allow the authenticated user to perform actions on the application.
+
+    - Authenticated Principal:
+      - A principal is a person who is identified through the process of authentication. This means it is a current logged in users.
+      - In Spring security principal contain the name of currently logged in user. It is an interface as AuthenticatedPrincipal in Spring security.
+        It has only one method getName() which returns the name of the authenticated Principal. 
+    
+    - Granted Authority:
+      - Granted authority is the access privilege level given to user. X can create/delete but Y can only read. 
+    
+    - Role:
+      - Role represents a group of Authorities. 
+      - ADMIN ROLE - create,read,update,delete
+      
+    - Filters:
+      - A filter is an object that is invoked at the pre-processing and post-processing of a request.
+      - It exists between the client and application so that it intercepts every request and do some mentioned tasks.
+      - One example of the spring-security filter is UsernamePasswordAuthenticationFilter , which take credential information from the request
+        and generate the Authentication object with the credential.
+    
+    - Authentication Manager:
+      - The authentication manager manages the authentication configuration in spring security. It authenticates the user and requests.
+      - In spring-security, authentication manager represent as an interface AuthenticationManager. It has only one method, which authenticates the user.
+        Method is authenticate(Authentication authentication)
+
+      - After entering the username and password or other authentication details by the user, the spring-security filter creates an object of Authentication
+        with credentials. This authentication token or object pass to theauthenticate() method of AuthenticationManager. In this method, we extract the credential
+        information from the Authentication object and validate the user. If it’s valid then this method returns the successful authentication otherwise throws
+        the exception with details.
+    
+    - Authentication Manager Builder:
+      - Authentication Manager Builder is used to create the Authentication Manager.
+      - To create the Authentication Manager, we don’t need to implement the AuthenticationManager interface directly. For that, we are going to use the AuthenticationManagerBuilder class.
+      - In spring security there is already a class WebSecurityConfigurerAdapter which has method configure() which take parameters as AuthenticationManagerBuilder.
+      - So now we can extend that class and can override this method according to our requirements. In this method we can use this AuthenticationManagerBuilder object to configure authentication
+        requirements according to our needs. If we will not override this method, the default configuration will work.
+    
+    - Authentication Provider:
+      - Authentication Provider helps spring security to provide the user details by which it performs authentication.
+      - For authentication, the user enters the username and password. But to validate those credentials, someone needs to provide the actual credential from DB or memory and compare it to authenticate the user.
+    
+    - Password Encoder:
+      - Spring always use to deal with hashed/encoded password rather than a raw password. 
+      - And whenever we need to store the password, it should be in hashed form because of security reasons. Because if anyone got access of DB where we are storing username and password, and password is in plain
+        text form then that person can have access to each user.
+      - In spring-security, PasswordEncoder is an interface that provides the powerful and latest way to encode the password and match with a raw password.
+      - This interface has two methods. First is encode() , which takes the raw password and returns the encoded password. The second method is matches() , which compares the raw password and the encoded password.
+      - Spring security provides the different implementation of this PasswordEncoder interface. For example, BCryptPasswordEncoder , SCryptPasswordEncoder, LdapShaPasswordEncoder, Md4PasswordEncoder etc.
+      
+    
+
+      
