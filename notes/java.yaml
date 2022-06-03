@@ -5,6 +5,12 @@
            that JVM uses at runtime.
     - JDK: It is a development kit which is used to develop java program. It contains JRE+development tools. It contains 
            interpreter, compiler(javac), archive(jar)
+    - Heap Dump:
+      - A heap dump is a snapshot of all the objects in the Java Virtual Machine (JVM) heap at a certain point in time. 
+      - The JVM software allocates memory for objects from the heap for all class instances and arrays.
+      - If your program crashes because of Out of memory error, then looking at the Heap dump is a great start point to identify 
+        which objects are taking the most memory and then using good DS & Algo you can decrease the references and the memory.
+      - Tools like JProfile, Eclise Mat Analyzer are good tools for finding memory leaks/out of memory problem, performance bottlenecks etc.
 
   - Oops concepts:
     - Abstraction: Hiding the implementation and showing only the essential details.
@@ -13,6 +19,9 @@
        - Binding of data and the code that manipulates it. private variable and get set methods. 
        - It protects the data from being accessed by outside.
     - Inheritance: A mechanism in which one java class inherits the property of other class.
+      
+  - Why exception handling:
+    - It helps maintain the normal, desired flow of the program even when unexpected events occur. If Java exceptions are not handled, programs may crash or requests may fail.
   
   - Threads:
     - implement Runnable interface or extend Thread class to create threads.
@@ -130,11 +139,15 @@
         information about a program. It is not a part of the application that we develop. It does not have a direct effect on the operation of the code
         they annotate. It does not change the action of the compiled program.
     - ResponseBody: Tells the controller that object returned is serialized to JSON.
+    
     - RequestMapping: Used to provide routing information and tells to spring that any HTTP request must be mapped to respective method. 
+    
     - Configuration:
       - Configuration annotation indicates that a class declares one or more @Bean methods and may be processed by the Spring container 
         to generate bean definitions and service requests for those beans at runtime.
+
     - ComponentScan: ComponentScan tells Spring to scan and detect beans.
+      
     - EnableAutoConfiguration: 
         - Used to enable auto-configuration and component scanning in your project. 
         - Combination of @Configuration and @ComponentScan
@@ -143,10 +156,16 @@
     - SpringBootApplication:
       - Used in the main class 
       - Combination of @Configuration, @ComponentScan and @EnableAutoConfiguration
+      - 
     - Component: 
       - Component is an annotation that allows Spring to automatically detect our custom beans. In other words, without having to write any explicit code,
       - Spring will Scan our application for classes annotated with @Component. Instantiate them and inject any specified dependencies into them.
-  
+    
+    - ControllerAdvice or RestControllerAdvice:
+      - It enables the class as Global Exception Handler. 
+      - If controller is not handling the exception then spring searches for the thrown exception type in class with controller advice annotation. 
+      - Else the normal error in Json format with status as 500 is returned.
+      
   - JPA (Java Persistence API):
     - The Java Persistence API (JPA) is a specification of Java. It is used to persist data between Java
       object and relational database. JPA acts as a bridge between object-oriented domain models and relational
@@ -198,7 +217,12 @@
   
   - Profiles:
     - Profiles are used to provide a way to segregate the different parts of the application config and makes it available for various environments.
-
+  
+- Why write unit tests:
+  - Writing unit test is a good practice as it ensures that all code meets quality standards before it's deployed.
+  - Unit tests are also especially useful when it comes to refactoring or re-writing a piece a code. If you have good unit tests coverage, you can refactor with confidence. 
+  - Without unit tests, it is often hard to ensure the you didn't break anything.
+  - Spring has starter test dependency that uses Junit.
     
 
 
