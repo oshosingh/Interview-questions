@@ -96,6 +96,23 @@
           Since non-clustered indexes are located in a separate location, there can be multiple non-clustered indexes per table.
         - They contain the primary key value in their map, when it finds the value then sql does a index seek on the primary key
           or clustered index to find the record.
+  
+  - Rank and Dense Rank:
+    - RANK and DENSE_RANK are used to order values and assign them numbers depending on where they fall in relation to one another.
+    - Both functions use an OVER() clause along with PARTITION BY and ORDER BY. The PARTITION BY part of the functions is optional but the ORDER BY is always necessary.
+    
+    - SELECT student_name, RANK() OVER(ORDER BY grades DESC) AS grade_ranking or 'grade_ranking' sometimes
+    - ORDER BY specifies the column whose values you wish to rank
+    
+    - PARTITION BY groups the rankings. When the value changes for the column specified here, the rankings start all over again. Let’s say we added subject to the student’s test scores.
+      If you partitioned the data by subject, it would give you the ranking of each score, grouped by subject.
+
+    - SELECT student_name, DENSE_RANK() OVER(PARTITION BY subject ORDER BY grades DESC) AS grade_ranking
+    
+    - Difference between rank() and desnse_rank():
+      - condition: if you have two duplicates then they will get same rank let's say 2 then what would be the rank of next number 
+      - rank(): if used rank function, the next number will get 4 skipping 3, it increments the number if duplicates are there 
+      - dense_rank(): if used dense_rank function, the next number will get 3, it maintains chronological order 
 
       
 

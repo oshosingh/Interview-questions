@@ -1,0 +1,15 @@
+- Find second highest salary:
+  - select max(salary) from Emp where salary < (select max(salary) from Emp)
+
+- Find Nth highest salary:  
+  - Using Dense rank method and apply distinct to return single result if duplicates are there  
+  
+    CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+    BEGIN
+      RETURN (
+          select distinct salary from (
+            select salary, dense_rank() over (order by salary desc) as rs from Employee 
+          ) 
+          as sub_select where rs=N
+      );
+    END
