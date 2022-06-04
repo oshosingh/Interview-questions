@@ -63,3 +63,20 @@ public Node copyRandomList(Node head) {
         
     return oldToNew.get(head);    
 }
+
+// Delete linked list
+void deleteLinkedList(Node root){
+    Node prev = root;
+    while(root != null){
+        root = root.next;
+        delete(prev);
+        prev = root;
+    }
+}
+
+// Delete node in linked list if reference to head is not given but reference to the node is given
+void delete(Node node){
+    // update the node's val with next val and update the pointer to next's next
+    node.val = node.next.val;
+    node.next = node.next.next;
+}
