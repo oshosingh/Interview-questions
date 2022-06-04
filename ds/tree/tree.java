@@ -77,6 +77,15 @@ void height(Tree root){
     return Math.max(lh, rh)+1;
 }
 
+// Min depth of tree
+void minDepth(Tree root){
+    if(root==null) return 0;
+    int left = minDepth(root.left);
+    int right = minDepth(root.right);
+
+    return (left==0 || right==0) ? left+right+1 : Math.min(left, right)+1;
+}
+
 // Diameter of tree
 int max = 0;
 void diameter(Tree root){
