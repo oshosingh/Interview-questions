@@ -55,10 +55,7 @@ TreeNode solve(int[] preorder, int min, int max){
 
 // Convert sorted array to BST
 TreeNode solve(int[] nums, int low, int high){
-        if(low<0 || high>nums.length-1){
-            return null;
-        }
-        if(low>high){
+        if(low<0 || high>nums.length-1 || low>high){
             return null;
         }
         int mid = (low+high)/2;
