@@ -81,6 +81,7 @@ void delete(Node node){
     node.next = node.next.next;
 }
 
+================================================================================================================
 // Sort Linked List using Merge sort
 ListNode sortList(ListNode head) {
     // Apply merge sort
@@ -130,3 +131,4 @@ ListNode merge(ListNode list1, ListNode list2){
     if(list2!=null) tail.next = list2;
     return dummy.next;
 }
+======================================================================================================================
