@@ -22,6 +22,16 @@ public class ListNode {
         return prev;
 }
 
+// Find Mid of linked list
+ListNode findMid(ListNode head){
+    ListNode slow = head, fast = head.next;
+    while(fast != null && fast.next!= null){
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return slow;
+}
+
 // Reverse linked list between location l & r
 public ListNode reverseBetween(ListNode head, int l, int r) {
         ListNode dummy = new ListNode(0, head);

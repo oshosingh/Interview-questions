@@ -80,3 +80,53 @@ void delete(Node node){
     node.val = node.next.val;
     node.next = node.next.next;
 }
+
+// Sort Linked List using Merge sort
+ListNode sortList(ListNode head) {
+    // Apply merge sort
+    if(head == null || head.next==null) return head;
+        
+    ListNode left = head;
+    ListNode right = findMid(head);
+        
+    // break the link between left and right
+    ListNode temp = right.next;
+    right.next = null;
+    right = temp;
+        
+    left = sortList(left);
+    right = sortList(right);
+        
+    return merge(left, right);
+}
+
+ListNode findMid(ListNode head){
+    // Slow and fast pointer approach to find mid
+    ListNode slow = head, fast = head.next;
+    while(fast != null && fast.next!= null){
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return slow;
+}
+
+ListNode merge(ListNode list1, ListNode list2){
+    ListNode dummy = new ListNode();
+    ListNode tail = dummy;
+        
+    while(list1 != null && list2 != null){
+        if(list1.val < list2.val){
+            tail.next = list1;
+            list1 = list1.next;
+        }
+        else{
+            tail.next = list2;
+            list2 = list2.next;
+        }
+        tail = tail.next;
+    }
+        
+    if(list1!=null) tail.next = list1;
+    if(list2!=null) tail.next = list2;
+    return dummy.next;
+}
