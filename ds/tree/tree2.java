@@ -25,7 +25,7 @@ TreeNode solve(List<Integer> in, List<Integer> post){
         root.left = solve(in.subList(0, indRoot), post.subList(0, indRoot));
         // [ in(0, ind) post(0, ind) ]
         
-        root.right = solve(in.subList(indRoot+1, in.size()), post.subList(indRoot, in.size()-1));
+        root.right = solve(in.subList(indRoot+1, in.size()), post.subList(indRoot, post.size()-1));
         // [ in(ind+1, size) post(ind+1, size()-1) ]
 
         return root;
