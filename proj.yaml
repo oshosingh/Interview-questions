@@ -5,3 +5,9 @@
     - First, creating the k8s cluster on AWS cloud and then setting up Jupyterhub server on the cluster using Helm chart.
     - In the second part, I worked on developing APIs that allow users to create, start, stop and delete JupyterLab containers
       on demand on jupyterpod cluster, as well as APIs that allow users to organise their servers into projects.
+
+  - Real Time chat application:
+    - Used a node package called Apollo-GraphQl for implementing bi-directional communication using GraphQl subscriptions feature.
+    - subscriptions enables socker communication between end users.
+    - A GraphQL query is used to read or fetch values while a mutation is used to write or post values.
+    - GraphQl is fast than Rest because you pick the fields to query so it will always be faster.
