@@ -1,4 +1,4 @@
-1. Given an integer array, find the largest subarray formed by consecutive integers. The subarray should contain all distinct values.
+// 1. Given an integer array, find the largest subarray formed by consecutive integers. The subarray should contain all distinct values.
    { 2, 0, 2, 1, 4, 3, 1, 0 }
 
    Ans- { 0, 2, 1, 4, 3 }
@@ -41,7 +41,7 @@ Boolean isConsecutive(int[] a, int i, int j, int min, int max){
 }
 
 
-2. Given an integer array, find the maximum length subarray having a given sum.
+// 2. Given an integer array, find the maximum length subarray having a given sum.
 
 nums[] = { 5, 6, -5, 5, 3, 5, 3, -2, 0 }
 target = 8
@@ -68,7 +68,7 @@ int maxLengthSubarray(int[] a, int n, int target){
 	return len;
 }	
 
-3. Merge Sorted Array in place (a has length m+n)
+// 3. Merge Sorted Array in place (a has length m+n)
 
 void merge(int[] a, int m, int[] b, int n) {
     if(n==0) return;
@@ -82,7 +82,7 @@ void merge(int[] a, int m, int[] b, int n) {
     while(j>=0) a[end--] = b[j--];
 }
 
-4. Find maximum product of two integers in an array
+// 4. Find maximum product of two integers in an array
 
 void maxProduct(int[] a){
     // find first max, second max, first min and second min in one traversal
@@ -114,4 +114,24 @@ void maxProduct(int[] a){
 	// answer is max of max1*max2 and min1*min2
 	if(max1*max2 > min1*min2) System.out.println(max1+" "+max2);
 	else System.out.println(min1+" "+min2);
+}
+
+// 5. Maximum Difference Between Increasing Elements
+
+int findDiff(int[] a, int n){
+	int diff = -1;
+	int min = a[0], max = a[0];
+
+	for(int x : a){
+		if(x<min){
+			min = x;
+			max = x;
+		}
+		if(x>max){
+			max = x;
+			diff = Math.max(diff, max-min);
+		}
+	}
+
+	return diff;
 }
