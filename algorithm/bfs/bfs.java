@@ -20,8 +20,8 @@ int shortestPathBinaryMatrix(int[][] grid) {
 
                 for(int r[]:dir){
                     int dx = r[0]+temp[0];
-                    int dy = r[1]+temp[1
-                    ];
+                    int dy = r[1]+temp[1];
+                    
                     if(isInLimit(dx, dy, grid)){
                         grid[dx][dy]=1;
                         q.add(new int[]{dx, dy,temp[2]+1});
