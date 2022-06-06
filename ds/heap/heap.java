@@ -64,3 +64,47 @@ int[] maxSubsequence(int[] nums, int k) {
         
     return Integer.parseInt(ans);
 }
+
+
+// Sort Characters By Frequency
+String frequencySort(String s) {
+    Map<Character, Node> map = new HashMap<>();
+    char[] c = s.toCharArray();
+
+    for(char x : c){
+        if(map.containsKey(x)){
+            map.get(x).freq++;
+        }
+        else{
+            map.put(x, new Node(x, 1));
+        }
+    }
+        
+    PriorityQueue<Node> pq = new PriorityQueue<>((x, y) -> y.freq - x.freq);
+        
+    for(Map.Entry<Character, Node> entry : map.entrySet()){
+        pq.add(entry.getValue());
+    }
+        
+    String ans = "";
+        
+    while(!pq.isEmpty()){
+        Node poll = pq.poll();
+            
+        for(int i=0; i<poll.freq; i++){
+            ans += poll.c;
+        }
+    }
+        
+    return ans;
+}
+    
+class Node{
+    char c;
+    int freq;
+        
+    public Node(char c, int freq){
+        this.c = c;
+        this.freq = freq;
+    }
+ }
