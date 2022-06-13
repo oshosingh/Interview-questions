@@ -1,0 +1,42 @@
+- Why use design patters :
+  - The aim of design patterns is to make software design more understandable and maintainable.
+
+- What is the motivation behind solid Principles:
+  - During software development there will be several changes and updates. 
+  - principles are specifications and design pattern are their implementations
+  
+- Solid Principles:
+  - Single responsibility principle 
+  - open-close principle
+  - Liskov substitution principle
+  - interface segregation principle
+  - dependency inversion
+
+- Tight coupling and Loose coupling:
+  - Tight coupling -> When classes are dependent on each other, bad programming practice
+  - Loose coupling -> when classes are independent on each other, achieved through interfaces(abstraction)
+  
+- Single responsibility principle:
+  - Every class (or method) in a computer program should have responsibility over a single part 
+    of that program's functionality, which it should encapsulate.
+
+- Open/close principle:
+  - the design and writing of the code should be done in a way that new functionality should be added with 
+    minimum changes in existing code.
+  - Software entities should be open for extension and closed for modification 
+  
+- Liskov substitution principle:
+  - objects of a superclass shall be replaceable with objects of its subclasses without breaking the application
+  - that requires the objects of your subclasses to behave in the same way as the objects of your superclass 
+  
+- interface segregation principle:
+  - Interface should not have a large number of methods
+  - client should not be forced to depend on methods it does not use
+  - when it is possible we should break our interfaces in many smaller ones so they better satisfy the exact 
+    needs of our clients 
+
+- Dependency inversion principle:
+  - High-level modules should not depend on low-level modules. Both should depend on abstractions.
+  - Abstractions should not depend on details(concrete implementations) should depend on abstractions
+  - High level <- Abstraction <- low-level 
+  - current implemtation means don't use class but use interface that the class implements 
