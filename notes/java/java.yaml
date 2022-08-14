@@ -30,11 +30,20 @@
     - The callable interface was introduced in concurrency package, which is similar to the Runnable interface, 
       but it can return any object, and is able to throw an Exception. The Java Callable interface uses Generics,
       so it can return any type of Object.
+    
+    - Important concepts: 
+      - A multi-threaded java program until all the threads are terminated.
+      - To solve this proble we have interrupts and daemon thread. 
+      
+      - when can we interrupt a thread: 
+        - If the thread is executing a method that throws an Interrupted exception 
+        - If the thread's code is handling the interrupt signal explicitly
 
-    - Daemon Thread: 
-      - Daemon thread in Java is a low-priority thread that runs in the background to perform tasks such as garbage collection. 
-      - Daemon thread in Java is also a service provider thread that provides services to the user thread. Its life depends on the mercy of user threads 
-        i.e. when all the user threads die, JVM terminates this thread automatically.
+      - Daemon Thread: 
+        - Background threads that do not prevent the application from exiting if the main thread terminates 
+        - Daemon thread in Java is a low-priority thread that runs in the background to perform tasks such as garbage collection. 
+        - Daemon thread in Java is also a service provider thread that provides services to the user thread. Its life depends on the mercy of user threads 
+          i.e. when all the user threads die, JVM terminates this thread automatically.
 
     - Methods:  
       - start() : start the thread
