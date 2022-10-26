@@ -1,6 +1,9 @@
 - What is object oriented:
   - Object oriented is a programming model that organizes software design around data and objects rather than function and logic.
 
+  - Object-oriented programming is a programming paradigm based on the concept of "objects", which can contain data and code:
+    - data in the form of fields, and code, in the form of procedures
+    
 - Java and Java 1.8 Features:
   - Core concepts:  
     - JVM: It is a specification that provides a runtime environment where byte codes can be executed.
